@@ -1,0 +1,9 @@
+[profile.release]
+debug = true
+
+[workspace]
+
+members = [
+    "counters",
+    "benchmark"
+]

@@ -1,0 +1,12 @@
+[package]
+name = "counters"
+version = "0.1.0"
+authors = ["Dima  <twissel@gmail.com>"]
+edition = "2018"
+
+
+[dependencies]
+
+
+[profile.dev]
+opt-level = 1
