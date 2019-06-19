@@ -77,7 +77,7 @@ impl Counter {
         }
     }
 
-    #[inline(never)]
+    #[inline]
     pub fn inc(&self) {
         unsafe {
             let node_ref = &*self.node;

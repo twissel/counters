@@ -46,7 +46,7 @@ impl Counter for FastCounter {
         self.get()
     }
 
-    #[inline(never)]
+    #[inline]
     fn inc(&self) {
         self.inc()
     }
@@ -119,7 +119,7 @@ struct Options {
     max_threads: usize,
 
     /// Num iterations
-    #[structopt(short = "i", long = "num-iterations", default_value = "20000")]
+    #[structopt(short = "i", long = "num-iterations", default_value = "50000")]
     num_iterations: usize,
 
     /// Num iterations
@@ -131,6 +131,6 @@ fn main() {
     let options = Options::from_args();
     for threads in 1..options.max_threads + 1 {
         bench_counter::<SimpleCounter>(options.num_iterations, threads, options.num_increments);
-        //bench_counter::<FastCounter>(options.num_iterations, threads, options.num_increments);
+        bench_counter::<FastCounter>(options.num_iterations, threads, options.num_increments);
     }
 }
